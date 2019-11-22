@@ -1,0 +1,29 @@
+.login-card {  
+  text-align: center;
+  margin: auto;
+}
+
+.label-login {
+  margin-top: 0.75em !important;
+}
+
+@media (min-width: 576px) {
+  .login-card {
+    width: 250px;
+  }
+}
+@media (min-width: 768px) {
+  .login-card {
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .login-card {
+    width: 350px;
+  }
+}
+@media (min-width: 1200px) {
+  .login-card {
+    width: 400px;
+  }
+}
