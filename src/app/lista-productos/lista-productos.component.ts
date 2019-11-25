@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
+export interface Producto {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  imagen: string;
+  precio: number;
+  categoria: string;
 }
 
 @Component({
@@ -15,11 +17,10 @@ export interface Tile {
 
 
 export class ListaProductosComponent implements OnInit {
-  tiles: Tile[] = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+  productos: Producto[] = [
+    {id: 1, nombre: 'Bolsas de maíz combinadas marca COMPOSTPACK', descripcion: '95 bolsas de maíz, 30 Bolsas 23x30cm, 30 Bolsas 30x40cm, 25 Bolsas 48x53cm, 15 bolsas 65x75cm', imagen: '', precio: 55000, categoria: '4'},
+    {id: 2, nombre: 'Súper Dispensador Multiusos PoopyBags marca COMPOSTPACK', descripcion: 'Dispensador bolsas 23x30cm. Inclue 1 rollo de 30 bolsas de 23x30cm. Perfecto para todo tipo de collar y para guardar bolsas, snacks para mascota, dinero, llaves, audífonos.', imagen: '', precio: 44000, categoria: '4'},
+    {id: 3, nombre: 'Chorizo a Base de Almendras - Finas Hierbas marca LAIVES', descripcion: 'Almendra desgrasada, sólido de soya (proteína, lecitina), sólido de maíz, proteína de quinua, aceite de oliva, especias naturales (tomillo, albahaca), concentrado de hortalizas (perejil), color natural (rojo de remolacha E 162), color naranja natural (achiote o anato CI 75120), preservante natural E 202 (sorbato de potasio 1000 mg./kg.), regulador de pH natural E 325 (lactato de sodio) 1000 mg./kg.) agua, sal marina.', imagen: '', precio: 18000, categoria: '1'}
   ];
 
   constructor() { }

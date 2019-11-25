@@ -1,0 +1,23 @@
+.banner {
+  height: 150px;
+  background-image: url("../../assets/imgs/frutas_y_verduras.jpg");
+  background-size: cover;
+  background-position: center -100px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .banner {
+    height: 200px;
+  }
+}
+@media (min-width: 768px) {
+  .banner {
+    height: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .banner {
+    height: 400px;
+  }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioSesionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  iniciarSesion() {
+    // Invocación al servicio backend para inicio de sesión
+    console.log('Inicando sesión...');
+    this.router.navigate(['lista-productos']);
   }
 
 }

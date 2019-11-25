@@ -11,6 +11,10 @@
   .login-card {
     width: 250px;
   }
+	.titulo{
+		color: white;
+		font-size: 4rem;
+	}
 }
 @media (min-width: 768px) {
   .login-card {
@@ -27,3 +31,14 @@
     width: 400px;
   }
 }
+
+.logo{
+	width: auto;
+	height: 150px;
+}
+.titulo{
+	color: white;
+	font-size: 1.5rem;
+}
+
+
