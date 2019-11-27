@@ -1,1 +1,19 @@
-<p>detalle-producto works!</p>
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 detalle-producto" *ngIf="producto !== undefined">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/imgs/id{{producto.id}}.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{producto.nombre}}</h5>
+                    <p class="card-text"><b>Descripci&oacute;n:</b> {{producto.descripcion}}</p>
+                    <p class="card-text"><b>Precio:</b> ${{producto.precio}}</p>
+                    <a (click)="agregarAlCarrito()" class="btn btn-success btn-agregar-carrito">Agregar al carrito de compras</a>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="producto == undefined">
+             <p class="text-danger">Seleccione un producto</p></div>
+    </div>
+    <app-footer></app-footer>
+</div>

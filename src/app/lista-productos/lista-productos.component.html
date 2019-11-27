@@ -36,7 +36,7 @@
           <div class="card-body">
             <h5 class="card-title">{{producto.nombre}}</h5>
             <p class="card-text">${{producto.precio}}</p>
-            <a (click)="holi()" class="btn btn-success">Ver</a>
+            <a [routerLink]="['../detalle-producto']" [state]="{ state: producto}" class="btn btn-success">Ver</a>
           </div>
         </div>
       </div>

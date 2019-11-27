@@ -1,0 +1,9 @@
+.detalle-producto {
+    margin: auto;
+    max-width: 70% !important;
+    flex: 0 0 70% !important;
+}
+
+.btn-agregar-carrito {
+    color: #fff !important;
+}
