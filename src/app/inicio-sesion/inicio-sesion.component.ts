@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PeticionHttpService } from 'src/services/peticion-http.service';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -8,15 +9,23 @@ import { Router } from '@angular/router';
 })
 export class InicioSesionComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(public router: Router, public peticionHttp: PeticionHttpService) { }
+
+  usuario: string;
+  clave: string;
 
   ngOnInit() {
   }
 
   iniciarSesion() {
     // Invocación al servicio backend para inicio de sesión
-    console.log('Inicando sesión...');
-    this.router.navigate(['lista-productos']);
+    console.log('Inicando sesión...' + ' ' + this.usuario + ' ' + this.clave);
+    this.peticionHttp.consumirServicioPost('https://ecommercecoreback.azurewebsites.net/api/Authenticate/login', {username: this.usuario, password: this.clave}).subscribe(
+      data=>{
+        console.log('Data: ', data);
+      }
+    )
+    //this.router.navigate(['lista-productos']);
   }
 
 }

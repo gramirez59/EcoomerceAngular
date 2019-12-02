@@ -1,3 +1,17 @@
-<h1 class="bg-success text-white text-center my-2 py-2">Tiendita Ecol&oacute;gica Virtual</h1>
+<div class="bg-success d-flex">
+    <h1 class="text-white flex-grow-1 bd-highlight" style="text-align: center">Tiendita Ecol&oacute;gica Virtual</h1>    
+    <div class="btn-group p-2 bd-highlight" style="margin-right: 10px">
+            <button type="button" class="btn btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{obtenerEtiquetaUsuario()}}
+            </button>
+            <div class="dropdown-menu dropdown-usuario">
+              <a class="dropdown-item" href="#" *ngIf="nombreUsuario != null">Mi Cuenta</a>
+              <div class="dropdown-divider" *ngIf="nombreUsuario != null"></div>
+              <a class="dropdown-item" [routerLink]="['../inicio-sesion']" *ngIf="nombreUsuario == null">Iniciar Sesi&oacute;n</a>
+              <a class="dropdown-item" [routerLink]="['../registro-usuario']" *ngIf="nombreUsuario == null">Registrarme</a>
+              <a class="dropdown-item"(click)="cerrarSesion()" *ngIf="nombreUsuario != null">Cerrar Sesi&oacute;n</a>
+            </div>
+          </div>
+    </div>
 <div class="d-flex banner justify-content-center align-items-center">
 </div>

@@ -6,9 +6,9 @@
         </div>
         <div class="card-body">
           <h6 class="card-title label-login">Usuario</h6>
-          <input type="text">
+          <input type="text" [(ngModel)]="usuario">
           <h6 class="card-title label-login">Contraseña</h6>
-          <input type="password">
+          <input type="password" [(ngModel)]="clave">
           <br>
           <br>
           <button class="btn btn-primary bg-success" (click)="iniciarSesion()">Aceptar</button>

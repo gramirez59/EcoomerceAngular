@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Producto } from '../wrappers/producto';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -7,7 +8,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./detalle-producto.component.css']
 })
 export class DetalleProductoComponent implements OnInit {
-  producto: any = null;
+  producto: Producto = null;
+  cantidad = 1;
 
   constructor(private location:Location) {
     
@@ -17,6 +19,10 @@ export class DetalleProductoComponent implements OnInit {
     this.producto = state.state;
     console.log('Producto ', this.producto);
 
+  }
+
+  maxEnStock(){
+    return this.producto.stock;
   }
 
 

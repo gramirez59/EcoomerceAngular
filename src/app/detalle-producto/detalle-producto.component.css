@@ -7,3 +7,8 @@
 .btn-agregar-carrito {
     color: #fff !important;
 }
+
+.input-cantidad-productos {
+    margin-bottom: 10px;
+    width: 20%;
+}
