@@ -12,6 +12,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     NoopAnimationsModule,
     MatGridListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    HttpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

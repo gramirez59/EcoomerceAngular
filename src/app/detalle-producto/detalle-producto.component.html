@@ -8,12 +8,17 @@
                     <h5 class="card-title">{{producto.nombre}}</h5>
                     <p class="card-text"><b>Descripci&oacute;n:</b> {{producto.descripcion}}</p>
                     <p class="card-text"><b>Precio:</b> ${{producto.precio}}</p>
-                    <a (click)="agregarAlCarrito()" class="btn btn-success btn-agregar-carrito">Agregar al carrito de compras</a>
+                    <p class="card-text"><b>Cantidad:</b></p>
+                    <input type="number" name="quant[1]" class="form-control input-number input-cantidad-productos" value="1" min="1"
+                    [max]="maxEnStock()" [(ngModel)]="cantidad">
+                    <a (click)="agregarAlCarrito()" class="btn btn-success btn-agregar-carrito">Agregar al carrito de
+                        compras</a>
                 </div>
             </div>
         </div>
         <div *ngIf="producto == undefined">
-             <p class="text-danger">Seleccione un producto</p></div>
+            <p class="text-danger">Seleccione un producto</p>
+        </div>
     </div>
     <app-footer></app-footer>
 </div>

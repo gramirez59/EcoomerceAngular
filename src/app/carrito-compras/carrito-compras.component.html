@@ -1,1 +1,43 @@
-<p>carrito-compras works!</p>
+<app-header></app-header>
+<div class="container">
+    <div class="card card-carrito" style="width: 18rem;" *ngIf="cantidadDeProductos()>0">
+        <div class="card-header">
+            Tu compra
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Env&iacute;o</th>
+                            <th scope="col">Cantiadad</th>
+                            <th scope="col">Precio Unidad</th>
+                            <th scope="col">Precio Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let compra of listaDeCompras">
+                            <th scope="row">{{compra.producto.nombre}}</th>
+                            <td>A calcular</td>
+                            <td><input type="number" name="quant[1]"
+                                    class="form-control input-number input-cantidad-productos" value="1" min="1"
+                                    [max]="compra.producto.stock" [(ngModel)]="compra.cantidad"></td>
+                            <td>{{compra.producto.precio}}</td>
+                            <td>{{calcularTotalProducto(compra.producto.id, compra.producto.precio, compra.cantidad)}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li class="list-group-item"><b>Total: </b>${{calcularTotal()}}</li>
+            <li class="list-group-item"><a (click)="comprar()" class="btn btn-success" style="color:#fff;">Finalizar Compra</a>
+                <a (click)="guardarCompra()" class="btn btn btn-outline-success" style="margin-left: 5px;">Guardar Cambios en la Compra</a>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="cantidadDeProductos()==0">
+        <p class="text-danger">Su carrito está vac&iacute;o</p>
+    </div>
+    <app-footer></app-footer>
+</div>

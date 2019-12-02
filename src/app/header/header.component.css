@@ -21,3 +21,7 @@
     height: 400px;
   }
 }
+
+.dropdown-usuario {
+  transform: translate3d(-50px, 48px, 0px);
+}
