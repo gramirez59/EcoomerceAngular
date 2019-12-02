@@ -1,9 +1,46 @@
-<mat-grid-list cols="4" rowHeight="100px">
-  <mat-grid-tile
-      *ngFor="let tile of tiles"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="tile.color">
-    {{tile.text}}
-  </mat-grid-tile>
-</mat-grid-list>
+<app-header></app-header>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <!-- <a class="nav-link"><i class="navbar-toggler-icon"></i><span class="sr-only">(current)</span></a> -->
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Categor&iacute;as de Productos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" (click)="filtrar()">Alimentos Veganos</a>
+            <a class="dropdown-item" href="#">Productos de Aseo Personal</a>
+            <a class="dropdown-item" href="#">Productos de Aseo para el Hogar</a>
+            <a class="dropdown-item" href="#">Desechables Biodegradables</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="productos-container border border-gray m-2 p-5">
+    <div class="row">
+      <div class="col-sm-6" *ngFor="let producto of productos">
+        <div class="card">
+          <img class="card-img-top" src="../../assets/imgs/id{{producto.id}}.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{producto.nombre}}</h5>
+            <p class="card-text">${{producto.precio}}</p>
+            <a [routerLink]="['../detalle-producto']" [state]="{ state: producto}" class="btn btn-success">Ver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

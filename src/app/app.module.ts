@@ -9,6 +9,9 @@ import { DetalleProductoComponent } from './detalle-producto/detalle-producto.co
 import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
     ListaProductosComponent,
     RegistroComponent,
     DetalleProductoComponent,
-    CarritoComprasComponent
+    CarritoComprasComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
