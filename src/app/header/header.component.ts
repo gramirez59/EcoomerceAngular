@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { UtilServiceService } from 'src/services/util-service.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() nombreUsuario: string = null;
 
-  constructor() { }
+  constructor(public usuarioActivo: UtilServiceService) { }
 
   ngOnInit() {
   }
@@ -23,7 +24,8 @@ export class HeaderComponent implements OnInit {
   }
 
   cerrarSesion() {
-    
+    this.nombreUsuario = null;
+    this.usuarioActivo.usuarioActivo = null;
   }
 
 }
