@@ -5,9 +5,9 @@
             <div class="card">
                 <img class="card-img-top" src="../../assets/imgs/id{{producto.id}}.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">{{producto.nombre}}</h5>
-                    <p class="card-text"><b>Descripci&oacute;n:</b> {{producto.descripcion}}</p>
-                    <p class="card-text"><b>Precio:</b> ${{producto.precio}}</p>
+                    <h5 class="card-title">{{producto.name}}</h5>
+                    <p class="card-text"><b>Descripci&oacute;n:</b> {{producto.description}}</p>
+                    <p class="card-text"><b>Precio:</b> ${{producto.price}}</p>
                     <p class="card-text"><b>Cantidad:</b></p>
                     <input type="number" name="quant[1]" class="form-control input-number input-cantidad-productos" value="1" min="1"
                     [max]="maxEnStock()" [(ngModel)]="cantidad">

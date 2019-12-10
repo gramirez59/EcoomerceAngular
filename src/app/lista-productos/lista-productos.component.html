@@ -1,4 +1,4 @@
-<app-header ></app-header> <!--[nombreUsuario]="'Angela'"-->
+<app-header [nombreUsuario]="usuario"></app-header>
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
@@ -9,12 +9,12 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <!-- <a class="nav-link"><i class="navbar-toggler-icon"></i><span class="sr-only">(current)</span></a> -->
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Categor&iacute;as de Productos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" (click)="filtrar(0)">Todos</a>
             <a class="dropdown-item" (click)="filtrar(1)">Alimentos Veganos</a>
             <a class="dropdown-item" (click)="filtrar(2)">Productos de Aseo Personal</a>
             <a class="dropdown-item" (click)="filtrar(3)">Productos de Aseo para el Hogar</a>
@@ -22,7 +22,8 @@
           </div>
         </li>
         <li class="nav-item active">
-          <a class="nav-link btn-success btn-carrito-navbar" [routerLink]="['../carrito-compras']"><i class="fa fa-shopping-cart"></i> Carrito({{obtenerCantidadProductos()}})</a>
+          <a class="nav-link btn-success btn-carrito-navbar" [routerLink]="['../carrito-compras']"><i
+              class="fa fa-shopping-cart"></i> Carrito({{obtenerCantidadProductos()}})</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -37,13 +38,13 @@
         <div class="card">
           <img class="card-img-top" src="../../assets/imgs/id{{producto.id}}.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">{{producto.nombre}}</h5>
-            <p class="card-text">${{producto.precio}}</p>
+            <h5 class="card-title">{{producto.name}}</h5>
+            <p class="card-text">${{producto.price}}</p>
             <a [routerLink]="['../detalle-producto']" [state]="{ state: producto}" class="btn btn-success">Ver</a>
           </div>
         </div>
       </div>
     </div>
-  </div> 
+  </div>
   <app-footer></app-footer>
 </div>

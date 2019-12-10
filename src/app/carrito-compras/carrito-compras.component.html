@@ -18,13 +18,13 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let compra of listaDeCompras">
-                            <th scope="row">{{compra.producto.nombre}}</th>
+                            <th scope="row">{{compra.producto.name}}</th>
                             <td>A calcular</td>
                             <td><input type="number" name="quant[1]"
                                     class="form-control input-number input-cantidad-productos" value="1" min="1"
                                     [max]="compra.producto.stock" [(ngModel)]="compra.cantidad"></td>
                             <td>{{compra.producto.precio}}</td>
-                            <td>{{calcularTotalProducto(compra.producto.id, compra.producto.precio, compra.cantidad)}}
+                            <td>{{calcularTotalProducto(compra.producto.id, compra.producto.price, compra.cantidad)}}
                             </td>
                         </tr>
                     </tbody>
